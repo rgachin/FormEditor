@@ -1,0 +1,15 @@
+{
+  "name": "form-editor",
+  "version": "0.0.0",
+  "description": "FormEditor",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14",
+    "director": "1.2.0",
+    "react": "16.6.0",
+    "todomvc-app-css": "2.0.0"
+  }
+}
