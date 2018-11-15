@@ -1,20 +1,25 @@
 {
   "name": "form-editor",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "FormEditor",
-  "main": "app.js",
+  "main": "./js/app.js",
+  "scripts": {
+    "start": "lite-server"
+  },
   "author": {
-    "name": ""
+    "name": "Gachin Roman"
   },
   "devDependencies": {
     "@types/node": "^8.0.14",
     "director": "1.2.0",
-    "react": "^16.6.0",
-    "todomvc-app-css": "2.0.0"
+    "react": "^16.6.3",
+    "lite-server": "^2.2.1"
   },
   "dependencies": {
+    "@types/react": "^16.7.5",
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.5"
+    "popper.js": "^1.14.5",
+    "react-dom": "^16.6.3"
   }
 }
