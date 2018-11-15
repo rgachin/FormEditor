@@ -11,7 +11,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c40abc36-4d6d-4d76-a63b-5612baf427d2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>js\model.ts</StartupFile>
+    <StartupFile>app\app.jsx</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -32,18 +32,29 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\components\Option.jsx" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="js\fields.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="js\model.ts" />
+    <Folder Include="app\" />
+    <Folder Include="app\components\" />
+    <Folder Include="bootstrap_js\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="js\" />
+    <Compile Include="app\app.jsx" />
+    <Compile Include="app\components\Date.jsx" />
+    <Compile Include="app\components\Email.jsx" />
+    <Compile Include="app\components\Field.jsx" />
+    <Compile Include="app\components\InputField.jsx" />
+    <Compile Include="app\components\ItemsList.jsx" />
+    <Compile Include="app\components\Radio.jsx" />
+    <Compile Include="app\components\SearchPlugin.jsx" />
+    <Compile Include="app\components\CheckBox.jsx" />
+    <Compile Include="app\components\TextArea.jsx" />
+    <Compile Include="public\bundle.js" />
+    <Compile Include="webpack.config.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
