@@ -1,8 +1,8 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
-var TypeButton = require('./components/TypeButton.jsx');
+var Form = require('./components/Form.jsx');
 
 ReactDOM.render(
-    <TypeButton />,
+    <Form />,
     document.getElementById("app")
 )

@@ -9,8 +9,12 @@ class TypeButton extends React.Component {
     }
     onChange(e) {
         this.setState({ fieldtype: e.target.value });
-        this.props.updateFieldType(this.state.fieldtype);
         this.setState({ class: "off" });
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.fieldtype != this.state.fieldtype) {
+            this.props.updateFieldType(this.state.fieldtype);
+        };
     }
     press() {
         let className = (this.state.class === "off") ? "on" : "off";
