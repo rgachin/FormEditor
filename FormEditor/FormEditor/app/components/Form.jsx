@@ -11,7 +11,7 @@ var TypeButton = require('./TypeButton.jsx');
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { field: <Radio />, fieldtype: 'Field'}
+        this.state = { field: <Field />, fieldtype: 'Field'}
         this.onClick = this.onClick.bind(this);
         this.updateFieldType = this.updateFieldType.bind(this);
         this.changeField = this.changeField.bind(this);
