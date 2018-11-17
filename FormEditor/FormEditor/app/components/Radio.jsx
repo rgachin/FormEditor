@@ -5,7 +5,6 @@ var Option = require('./Option.jsx');
 class CheckBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { input: [<Option />] };
         this.onAddClick = this.onAddClick.bind(this);
         this.onDelClick = this.onDelClick.bind(this);
     }
@@ -30,7 +29,7 @@ class CheckBox extends React.Component {
                         this.state.input.map(function (item) {
                             return (
                                 <p>
-                                    <input type="radio" name="option">{item}</input>
+                                    <input type="radio" name="option" />{item}
                                 </p>
                             );
                         })

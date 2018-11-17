@@ -8,12 +8,12 @@ class SearchPlugin extends React.Component {
     }
 
     onTextChanged(e) {
-        var text = e.target.value.trim();   // удаляем пробелы
-        this.props.filter(text); // передаем введенный текст в родительский компонент
+        var text = e.target.value.trim();   // СѓРґР°Р»СЏРµРј РїСЂРѕР±РµР»С‹
+        this.props.filter(text); // РїРµСЂРµРґР°РµРј РІРІРµРґРµРЅРЅС‹Р№ С‚РµРєСЃС‚ РІ СЂРѕРґРёС‚РµР»СЊСЃРєРёР№ РєРѕРјРїРѕРЅРµРЅС‚
     }
 
     render() {
-        return <input placeholder="Поиск" onChange={this.onTextChanged} />;
+        return <input placeholder="РџРѕРёСЃРє" onChange={this.onTextChanged} />;
     }
 }
 

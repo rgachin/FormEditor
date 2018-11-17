@@ -1,3 +1,3 @@
-﻿# FormEditor
+# FormEditor
 
 

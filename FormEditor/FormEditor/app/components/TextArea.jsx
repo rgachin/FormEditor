@@ -9,7 +9,7 @@ class TextArea extends React.Component {
         return (
             <div>
                 <p>
-                    <Field />
+                    <Field label={this.props.label} description={this.props.description}/>
                 </p>
                 <p>
                     <input type="textarea" />

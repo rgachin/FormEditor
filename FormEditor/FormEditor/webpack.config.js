@@ -1,20 +1,20 @@
 var path = require('path');
 
 module.exports = {
-    entry: "./app/app.jsx", // входная точка - исходный файл
+    entry: "./app/app.jsx", // РІС…РѕРґРЅР°СЏ С‚РѕС‡РєР° - РёСЃС…РѕРґРЅС‹Р№ С„Р°Р№Р»
     output: {
-        path: path.resolve(__dirname, './public'),     // путь к каталогу выходных файлов - папка public
+        path: path.resolve(__dirname, './public'),     // РїСѓС‚СЊ Рє РєР°С‚Р°Р»РѕРіСѓ РІС‹С…РѕРґРЅС‹С… С„Р°Р№Р»РѕРІ - РїР°РїРєР° public
         publicPath: '/public/',
-        filename: "bundle.js"       // название создаваемого файла
+        filename: "bundle.js"       // РЅР°Р·РІР°РЅРёРµ СЃРѕР·РґР°РІР°РµРјРѕРіРѕ С„Р°Р№Р»Р°
     },
     module: {
-        rules: [   //загрузчик для jsx
+        rules: [   //Р·Р°РіСЂСѓР·С‡РёРє РґР»СЏ jsx
             {
-                test: /\.jsx?$/, // определяем тип файлов
-                exclude: /(node_modules)/,  // исключаем из обработки папку node_modules
-                loader: "babel-loader",   // определяем загрузчик
+                test: /\.jsx?$/, // РѕРїСЂРµРґРµР»СЏРµРј С‚РёРї С„Р°Р№Р»РѕРІ
+                exclude: /(node_modules)/,  // РёСЃРєР»СЋС‡Р°РµРј РёР· РѕР±СЂР°Р±РѕС‚РєРё РїР°РїРєСѓ node_modules
+                loader: "babel-loader",   // РѕРїСЂРµРґРµР»СЏРµРј Р·Р°РіСЂСѓР·С‡РёРє
                 options: {
-                    presets: ["@babel/preset-env", "@babel/preset-react"]    // используемые плагины
+                    presets: ["@babel/preset-env", "@babel/preset-react"]    // РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ РїР»Р°РіРёРЅС‹
                 }
             }
         ]

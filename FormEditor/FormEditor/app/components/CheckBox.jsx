@@ -30,7 +30,7 @@ class CheckBox extends React.Component {
                         this.state.input.map(function (item) {
                             return (
                                 <p>
-                                    <input type="checkbox">{item}</input>
+                                    <input type="checkbox" />{item}
                                 </p>
                                 );
                         })

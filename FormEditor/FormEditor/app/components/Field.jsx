@@ -3,7 +3,10 @@ var React = require('react');
 class Field extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { label: '', description: '' };
+        this.state = {
+            label: (props.label === null) ? '' : props.label,
+            description: (props.description === null) ? '' : props.description
+        };
         this.onLabelChange = this.onLabelChange.bind(this);
         this.onDescrChange = this.onDescrChange.bind(this);
     }
@@ -19,10 +22,10 @@ class Field extends React.Component {
         return (
             <div>
                 <p>
-                    <input type="text" placeholder="Название поля" value={this.state.label} onChange={this.onLabelChange} />
+                    <input type="text" placeholder="РќР°Р·РІР°РЅРёРµ РїРѕР»СЏ" value={this.state.label} onChange={this.onLabelChange} />
                 </p>
                 <p>
-                    <input type="text" placeholder="Возможное описание" value={this.state.description} onChange={this.onDescrChange} />
+                    <input type="text" placeholder="Р’РѕР·РјРѕР¶РЅРѕРµ РѕРїРёСЃР°РЅРёРµ" value={this.state.description} onChange={this.onDescrChange} />
                 </p >
             </div>);
     }

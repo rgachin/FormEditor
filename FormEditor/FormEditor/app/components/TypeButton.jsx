@@ -23,15 +23,15 @@ class TypeButton extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.press}>'Тип'</button>
+                <button onClick={this.press}>'РўРёРї'</button>
                 {(this.state.class === "on") && (
                     <div onChange={this.onChange}>
-                        <p><input type="radio" name="option" value="InputField" /> 'Однострочное поле ввода'</p>
-                        <p><input type="radio" name="option" value="TextArea" /> 'Многострочное поле ввода'</p>
-                        <p><input type="radio" name="option" value="CheckBox" /> 'Множественный выбор'</p>
-                        <p><input type="radio" name="option" value="Radio" /> 'Одиночный выбор'</p>
-                        <p><input type="radio" name="option" value="Email" /> 'Ввод email'</p>
-                        <p><input type="radio" name="option" value="Date" /> 'Ввод даты'</p>
+                        <p><input type="radio" name="option" value="InputField" /> 'РћРґРЅРѕСЃС‚СЂРѕС‡РЅРѕРµ РїРѕР»Рµ РІРІРѕРґР°'</p>
+                        <p><input type="radio" name="option" value="TextArea" /> 'РњРЅРѕРіРѕСЃС‚СЂРѕС‡РЅРѕРµ РїРѕР»Рµ РІРІРѕРґР°'</p>
+                        <p><input type="radio" name="option" value="CheckBox" /> 'РњРЅРѕР¶РµСЃС‚РІРµРЅРЅС‹Р№ РІС‹Р±РѕСЂ'</p>
+                        <p><input type="radio" name="option" value="Radio" /> 'РћРґРёРЅРѕС‡РЅС‹Р№ РІС‹Р±РѕСЂ'</p>
+                        <p><input type="radio" name="option" value="Email" /> 'Р’РІРѕРґ email'</p>
+                        <p><input type="radio" name="option" value="Date" /> 'Р’РІРѕРґ РґР°С‚С‹'</p>
                     </div>
                 )}
             </div>

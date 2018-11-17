@@ -52,10 +52,6 @@ class Form extends React.Component {
             }
         }
     }
-    onClick() {
-        var val = <InputField />
-        this.setState({ field: val });
-    }
     render() {
         return (
             <div>

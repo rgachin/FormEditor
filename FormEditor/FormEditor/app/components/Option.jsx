@@ -3,7 +3,7 @@ var React = require('react');
 class Option extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { label: '' };
+        this.state = { label: (props.label === null) ? '' : props.label };
         this.onLabelChange = this.onLabelChange.bind(this);
     }
     onLabelChange(e) {
@@ -13,7 +13,7 @@ class Option extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" placeholder="Çíà÷åíèå" value={this.state.label} onChange={this.onLabelChange} />
+                <input type="text" placeholder="Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ" value={this.state.label} onChange={this.onLabelChange} />
             </div>);
     }
 }
