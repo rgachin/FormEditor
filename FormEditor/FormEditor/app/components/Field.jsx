@@ -18,6 +18,14 @@ class Field extends React.Component {
         var val = e.target.value;
         this.setState({ description: val });
     }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.label != this.state.label) {
+            this.props.updateFieldLabel(this.state.label);
+        };
+        if (prevState.description != this.state.description) {
+            this.props.updateFieldDescr(this.state.description);
+        };
+    }
     render() {
         return (
             <div>

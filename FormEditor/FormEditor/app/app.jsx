@@ -1,8 +1,8 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
-var Option = require('./components/Option.jsx');
+var Form = require('./components/Form.jsx');
 
 ReactDOM.render(
-    <Option label="234" description="456"/>,
+    <Form />,
     document.getElementById("app")
 )

@@ -10,10 +10,15 @@ class Option extends React.Component {
         var val = e.target.value;
         this.setState({ label: val });
     }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.label != this.state.label) {
+            this.props.updateOptionLabel(this.state.label, this.props.num);
+        };
+    }
     render() {
         return (
             <div>
-                <input type="text" placeholder="Значение" value={this.state.label} onChange={this.onLabelChange} />
+                <input type="text" placeholder="Значение" value={this.state.label} onChange={this.onLabelChange} name='${this.props.num}'/>
             </div>);
     }
 }

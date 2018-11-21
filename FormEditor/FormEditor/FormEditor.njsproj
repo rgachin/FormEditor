@@ -4,6 +4,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>FormEditor</Name>
     <RootNamespace>FormEditor</RootNamespace>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,7 +24,7 @@
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
     <EnableTypeScript>true</EnableTypeScript>
-    <StartWebBrowser>false</StartWebBrowser>
+    <StartWebBrowser>False</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,12 +48,17 @@
     <Compile Include="app\components\Date.jsx" />
     <Compile Include="app\components\Email.jsx" />
     <Compile Include="app\components\Field.jsx" />
+    <Compile Include="app\components\Form.jsx">
+      <SubType>Code</SubType>
+      <DependentUpon>app\components\TypeButton.jsx</DependentUpon>
+    </Compile>
     <Compile Include="app\components\InputField.jsx" />
     <Compile Include="app\components\ItemsList.jsx" />
     <Compile Include="app\components\Radio.jsx" />
     <Compile Include="app\components\SearchPlugin.jsx" />
     <Compile Include="app\components\CheckBox.jsx" />
     <Compile Include="app\components\TextArea.jsx" />
+    <Compile Include="app\components\TypeButton.jsx" />
     <Compile Include="public\bundle.js" />
     <Compile Include="webpack.config.js" />
   </ItemGroup>

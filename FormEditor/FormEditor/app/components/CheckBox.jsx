@@ -5,19 +5,29 @@ var Option = require('./Option.jsx');
 class CheckBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { input: [<Option />] };
+        this.state = {
+            labels: (props.optionlabels === null) ? [['', 0]] : props.optionlabels
+        };
         this.onAddClick = this.onAddClick.bind(this);
         this.onDelClick = this.onDelClick.bind(this);
+        this.updateOptionLabel = this.updateOptionLabel.bind(this);
     }
     onAddClick() {
-        var val = this.state.input.slice();
-        val.push(<Option />);
-        this.setState({ input: val });
+        var val = this.state.labels.slice();
+        var num = val[val.length - 1][1] + 1;
+        val.push(['', num]);
+        this.setState({ labels: val });
     }
     onDelClick() {
-        var val = this.state.input.slice();
+        var val = this.state.labels.slice();
         val.pop();
-        this.setState({ input: val });
+        this.setState({ labels: val });
+    }
+    updateOptionLabel(label, number) {
+        var val = this.state.labels.slice();
+        val[number][0] = label;
+        this.setState({ labels: val });
+        this.props.updateCheckBox(labels, this.props.num);
     }
     render() {
         return (
@@ -27,12 +37,12 @@ class CheckBox extends React.Component {
                 </p>
                 <p>
                     {
-                        this.state.input.map(function (item) {
+                        this.state.labels.map(function (option) {
                             return (
                                 <p>
-                                    <input type="checkbox" />{item}
+                                    <input type="checkbox" name='option ${this.props.num}' /><Option label={option[0]} num={option[1]} updateOptionLabel={this.updateOptionLabel} />
                                 </p>
-                                );
+                            );
                         })
                     }
                 </p>
