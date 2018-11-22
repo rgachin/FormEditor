@@ -7,8 +7,8 @@ class Option extends React.Component {
         this.onLabelChange = this.onLabelChange.bind(this);
     }
     onLabelChange(e) {
-        var val = e.target.value;
-        this.setState({ label: val });
+        var nlabel = e.target.value;
+        this.setState({ label: nlabel });
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.label != this.state.label) {

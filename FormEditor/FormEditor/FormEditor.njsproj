@@ -33,6 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\components\EditedField.jsx" />
     <Content Include="app\components\Option.jsx" />
     <Content Include="package.json" />
     <Content Include="README.md" />
@@ -42,6 +43,7 @@
     <Folder Include="app\" />
     <Folder Include="app\components\" />
     <Folder Include="bootstrap_js\" />
+    <Folder Include="public\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app\app.jsx" />
@@ -53,9 +55,7 @@
       <DependentUpon>app\components\TypeButton.jsx</DependentUpon>
     </Compile>
     <Compile Include="app\components\InputField.jsx" />
-    <Compile Include="app\components\ItemsList.jsx" />
     <Compile Include="app\components\Radio.jsx" />
-    <Compile Include="app\components\SearchPlugin.jsx" />
     <Compile Include="app\components\CheckBox.jsx" />
     <Compile Include="app\components\TextArea.jsx" />
     <Compile Include="app\components\TypeButton.jsx" />

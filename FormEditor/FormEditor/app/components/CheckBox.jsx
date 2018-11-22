@@ -6,16 +6,20 @@ class CheckBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            labels: (props.optionlabels === null) ? [['', 0]] : props.optionlabels
+            labels: (props.optionlabels === null) ? [{ label: '', num: 0 }] : props.optionlabels
         };
         this.onAddClick = this.onAddClick.bind(this);
         this.onDelClick = this.onDelClick.bind(this);
         this.updateOptionLabel = this.updateOptionLabel.bind(this);
+        this.updateField = this.updateField.bind(this);
+    }
+    updateField(nlabel, ndescr) {
+        this.props.updateCheckBox({ num: this.props.num, field: { label: nlabel, descr: ndescr }, labels: this.state.labels });
     }
     onAddClick() {
         var val = this.state.labels.slice();
-        var num = val[val.length - 1][1] + 1;
-        val.push(['', num]);
+        var nnum = val[val.length - 1].num + 1;
+        val.push({ label: '', num: nnum });
         this.setState({ labels: val });
     }
     onDelClick() {
@@ -24,23 +28,23 @@ class CheckBox extends React.Component {
         this.setState({ labels: val });
     }
     updateOptionLabel(label, number) {
-        var val = this.state.labels.slice();
-        val[number][0] = label;
-        this.setState({ labels: val });
-        this.props.updateCheckBox(labels, this.props.num);
+        var nlabels = this.state.labels.slice();
+        nlabels[number][0] = label;
+        this.setState({ labels: nlabels });
+        this.props.updateCheckBox({ num: this.props.num, field: this.props.field, labels: nlabels });
     }
     render() {
         return (
             <div>
                 <p>
-                    <Field />
+                    <Field label={this.props.field.label} description={this.props.field.description} updateField={this.updateField}/>
                 </p>
                 <p>
                     {
                         this.state.labels.map(function (option) {
                             return (
                                 <p>
-                                    <input type="checkbox" name='option ${this.props.num}' /><Option label={option[0]} num={option[1]} updateOptionLabel={this.updateOptionLabel} />
+                                    <input type="checkbox" name='option ${this.props.num}' /><Option label={option.label} num={option.num} updateOptionLabel={this.updateOptionLabel} />
                                 </p>
                             );
                         })

@@ -11,19 +11,16 @@ class Field extends React.Component {
         this.onDescrChange = this.onDescrChange.bind(this);
     }
     onLabelChange(e) {
-        var val = e.target.value;
-        this.setState({ label: val });
+        var nlabel = e.target.value;
+        this.setState({ label: nlabel });
     }
     onDescrChange(e) {
-        var val = e.target.value;
-        this.setState({ description: val });
+        var ndescr = e.target.value;
+        this.setState({ description: ndescr });
     }
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.label != this.state.label) {
-            this.props.updateFieldLabel(this.state.label);
-        };
-        if (prevState.description != this.state.description) {
-            this.props.updateFieldDescr(this.state.description);
+        if ((prevState.label != this.state.label) || (prevState.description != this.state.description)) {
+            this.props.updateField(this.state.label, this.state.description);
         };
     }
     render() {
